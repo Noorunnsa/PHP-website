@@ -8,7 +8,7 @@ pipeline {
                     script {
                     sshagent(['Jenkinslave']) {
                         // SSH into your Linux VM and install Ansible
-                        sh 'ssh jenkinsworker@192.168.0.112 "sudo apt update && sudo apt install -y ansible"'
+                        sh 'ssh -o StrictHostKeyChecking=no jenkinsworker@192.168.0.112 "sudo apt update && sudo apt install -y ansible"'
                     }
                 }
               }
