@@ -1,5 +1,7 @@
 pipeline {
-    agent test-server
+    agent {
+        label 'test-server'
+    }
     stages {
         stage('Install Ansible') {
             steps {
