@@ -7,7 +7,7 @@ pipeline {
             steps {
                    script
                        {
-                   sh """ssh -tt -o StrictHostKeyChecking=no jenkinsworker@192.168.0.112 'sudo yum update -y'"""
+                   sh """ssh -tt jenkinsworker@192.168.0.112 'sudo yum update -y'"""
                        }
                   }
               }
