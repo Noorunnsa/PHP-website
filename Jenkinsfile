@@ -2,11 +2,18 @@ pipeline {
     agent {
         label 'test-server'
     }
+    environment {
+        SUDO_PASS = credentials('jenkinsworker')
+    }
     stages {
         stage('Install Ansible') {
             steps {
-                   sh 'sudo -S yum update -y && sudo -S yum install epel-release -y && sudo -S yum install ansible -y'
+                   script {
+                    sh "echo $SUDO_PASS | sudo -S yum update -y"
+                    sh "echo $SUDO_PASS | sudo -S yum install epel-release -y"
+                    sh "echo $SUDO_PASS | sudo -S yum install ansible -y"
                 }
+              }
             }
         stage('Verify Ansible Installation') {
             steps {
