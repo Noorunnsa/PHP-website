@@ -5,11 +5,10 @@ pipeline {
     stages {
         stage('Install Ansible') {
             steps {
-                   script {
-                    sh "sudo -S yum update -y"
-                    sh "sudo -S yum install epel-release -y"
-                    sh "sudo -S yum install ansible -y"
-                }
+                   sshagent (credentials: ['jenkinsworker']) {
+         sh "ssh jenkinsworker@192.168.0.112 sudo yum update -y"
+        
+       }
               }
             }
         stage('Verify Ansible Installation') {
