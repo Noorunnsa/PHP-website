@@ -5,7 +5,10 @@ pipeline {
     stages {
         stage('Install Ansible') {
             steps {
-                sh 'sudo yum update -y && sudo yum install epel-release -y && sudo yum install ansible -y'
+                script
+                       {
+                   sh """ssh -tt slave_vm@192.168.0.112 'sudo yum update -y && sudo yum install epel-release -y && sudo yum install ansible -y'"""
+                       }
             }
         }
         stage('Verify Ansible Installation') {
