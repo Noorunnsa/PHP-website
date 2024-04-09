@@ -5,9 +5,12 @@ pipeline {
     stages {
         stage('Install Ansible') {
             steps {
-                script {
-                    // Install Ansible on the remote server
-                    sshCommand remoteUser: 'jenkinsworker', remoteHost: '192.168.0.112', command: 'sudo yum install -y ansible'
+                script
+                 {
+                   sh """ssh -tt jenkinsworker@192.168.0.112 << EOF
+                   sudo yum update -y
+                   exit
+                   EOF"""
                 }
 
             }
