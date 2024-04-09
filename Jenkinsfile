@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Install Ansible') {
             steps {
-                   sh 'sudo yum update -y && sudo yum install epel-release -y && sudo yum install ansible -y'
+                   sh 'yum update -y && yum install epel-release -y && yum install ansible -y'
                 }
             }
         stage('Verify Ansible Installation') {
