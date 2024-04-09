@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'ansible --version'
                 sh 'echo ============================================'
-                sh 'Ansible is successully installed on Test server.'
+                sh 'Ansible is successfully installed on Test server.'
             }
         }
     }
