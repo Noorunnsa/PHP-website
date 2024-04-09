@@ -5,11 +5,10 @@ pipeline {
     stages {
         stage('Install Ansible') {
             steps {
-                sshagent (credentials: ['jenkinsworker']) {
-         sh "ssh jenkinsworker@192.168.0.112 sudo yum update -y"
-         sh "ssh jenkinsworker@192.168.0.112 sudo yum install epel-release -y"
-         sh "ssh jenkinsworker@192.168.0.112 sudo yum install ansible -y"
-       }
+                script {
+                    // Install Ansible on the remote server
+                    sshCommand remoteUser: 'jenkinsworker', remoteHost: '192.168.0.112', command: 'sudo yum install -y ansible'
+                }
 
             }
         }
