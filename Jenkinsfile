@@ -5,14 +5,8 @@ pipeline {
     stages {
         stage('Install Ansible') {
             steps {
-                script
-                 {
-                   sh """ssh -tt jenkinsworker@192.168.0.112 << EOF
                    sudo yum update -y
-                   exit
-                   EOF"""
                 }
-
             }
         }
         stage('Verify Ansible Installation') {
