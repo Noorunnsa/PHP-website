@@ -9,9 +9,9 @@ pipeline {
         stage('Install Ansible') {
             steps {
                    script {
-                    sh "echo $SUDO_PASS | sudo -S yum update -y"
-                    sh "echo $SUDO_PASS | sudo -S yum install epel-release -y"
-                    sh "echo $SUDO_PASS | sudo -S yum install ansible -y"
+                    sh "sudo -S yum update -y"
+                    sh "sudo -S yum install epel-release -y"
+                    sh "sudo -S yum install ansible -y"
                 }
               }
             }
