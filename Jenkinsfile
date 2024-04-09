@@ -2,9 +2,6 @@ pipeline {
     agent {
         label 'test-server'
     }
-    environment {
-        SUDO_PASS = credentials('jenkinsworker')
-    }
     stages {
         stage('Install Ansible') {
             steps {
