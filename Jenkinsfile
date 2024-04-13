@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-       label 'test-server'
-   }
+    agent any
+
    environment {
        ANSIBLE_INVENTORY = '/home/jenkinsmaster/PHP-website/inventory.yml'
    }
