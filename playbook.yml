@@ -19,7 +19,7 @@
     - name: Grant execute permissions to the script
       command: chmod u+x install-docker.sh
        
-    - name: Add Docker repository
+    - name: Run Shell script
       shell: ./install-docker.sh
 
     - name: Start and enable Docker service
