@@ -16,7 +16,7 @@ pipeline {
                script
                        {
                    sh 'pwd'
-                   sh 'ansible-playbook -i $ANSIBLE_INVENTORY /var/lib/jenkins/workspace/Install Docker - Job2/playbook.yml'
+                   sh 'ansible-playbook -i $ANSIBLE_INVENTORY "/var/lib/jenkins/workspace/Install Docker - Job2/playbook.yml"'
                        }
            }
          }
