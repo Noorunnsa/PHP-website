@@ -6,7 +6,7 @@ pipeline {
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_USERNAME = credentials('Noorunnisa')
         DOCKER_PASSWORD = credentials('Noorunnisa@docker')
-        DOCKER_IMAGE = 'Noorunnisa:latest'
+        DOCKER_IMAGE = 'noorunnisa:latest'
         DOCKERFILE_PATH = './website/dockerfile'
         CONTAINER_NAME = 'php-container'
         PORT_MAPPING = '8080:80' 
