@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'test-server'
+    }
     environment {
         DOCKER_REGISTRY = 'docker.io'
         DOCKER_USERNAME = credentials('docker-hub-username')
