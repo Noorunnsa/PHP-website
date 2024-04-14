@@ -4,9 +4,9 @@ pipeline {
     }
     environment {
         DOCKER_REGISTRY = 'docker.io'
-        DOCKER_USERNAME = credentials('Noorunnisa')
-        DOCKER_PASSWORD = credentials('Noorunnisa@docker')
-        DOCKER_IMAGE = 'noorunnisa:latest'
+        DOCKER_USERNAME = credentials('username')
+        DOCKER_PASSWORD = credentials('Password')
+        DOCKER_IMAGE = 'Myrepo:latest'
         DOCKERFILE_PATH = './website/dockerfile'
         CONTAINER_NAME = 'php-container'
         PORT_MAPPING = '8080:80' 
