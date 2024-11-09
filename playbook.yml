@@ -1,0 +1,29 @@
+---
+- name: Install Docker on Centos7
+  hosts: slave_vm
+  become: yes
+  tasks:
+    - name: Update yum packages
+      yum:
+        update_cache: yes
+        
+    - name: Install curl
+      yum:
+        name: curl
+        state: present
+
+    - name: Download Install script
+      command: curl -fsSL https://get.docker.com -o install-docker.sh
+       
+
+    - name: Grant execute permissions to the script
+      command: chmod u+x install-docker.sh
+       
+    - name: Run Shell script
+      shell: ./install-docker.sh
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
